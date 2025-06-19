@@ -1,47 +1,52 @@
-import React, { useState } from 'react';
-import Home from './Home';
-import TitleChanger from './TitleChanger';
-import './App.css';
-import WindowTracker from './WindowTracker';
-import CustomHook from './CustomHook';
-import FocusableInput from './FocusableInput';
-import UglyClass from './UglyClass';
-import FancyButton from '../small/FancyButton';
-import TicTacToe from './TicTacToe';
+import React, { useState } from "react";
+import Home from "./Home";
+import TitleChanger from "./TitleChanger";
+import "./App.css";
+import WindowTracker from "./WindowTracker";
+import CustomHook from "./CustomHook";
+import FocusableInput from "./FocusableInput";
+import UglyClass from "./UglyClass";
+import FancyButton from "../small/FancyButton";
+import TicTacToe from "./TicTacToe";
+import Memotest from "./Memotest";
 
 const pages = {
   home: {
-    name: 'Home',
+    name: "Home",
     component: Home,
   },
   titleChanger: {
-    name: 'Title Changer',
+    name: "Title Changer",
     component: TitleChanger,
   },
   windowTracker: {
-    name: 'Window Tracker',
+    name: "Window Tracker",
     component: WindowTracker,
   },
   customHook: {
-    name: 'Custom Hook',
+    name: "Custom Hook",
     component: CustomHook,
   },
   focusableInput: {
-    name: 'Focusable Input',
+    name: "Focusable Input",
     component: FocusableInput,
   },
   uglyClass: {
-    name: 'Ugly Class',
+    name: "Ugly Class",
     component: UglyClass,
   },
   ticTacToe: {
-    name: 'Tic Tac Toe',
+    name: "Tic Tac Toe",
     component: TicTacToe,
+  },
+  memotest: {
+    name: "Memotest",
+    component: Memotest,
   },
 };
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState("home");
   const CurrentComponent = pages[currentPage].component;
   return (
     <div className="app">
@@ -51,8 +56,7 @@ function App() {
             active={pageKey === currentPage}
             key={pageKey}
             navigation
-            onClick={() => setCurrentPage(pageKey)}
-          >
+            onClick={() => setCurrentPage(pageKey)}>
             {pageData.name}
           </FancyButton>
         ))}
